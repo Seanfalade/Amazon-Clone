@@ -1,8 +1,0 @@
-.border-white{
-    border: 15px 15px;
-}
-
-.border-white:hover{
-    cursor: pointer;
-    border: 1.5px solid white;
-}

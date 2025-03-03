@@ -1,19 +1,16 @@
 import React from 'react'
-import './Style.css'
+import '../styles/NavbarLocation.css'
 
 const NavbarLocation = () => {
   // const [first, setfirst] = useState(second)
   return (
     <>
-    <div className='header-country-location' data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <div className='header-country-location border-white' data-bs-toggle="modal" data-bs-target="#exampleModal">
             
-       <img src="/Images/marker.png" style={{marginBottom: '8px'}}
-             width={25} 
-             height={18} 
-            alt="" />
+       <img src="/public/Images/marker.png" alt="" />
          <div>
-            <p style={{ marginBottom: '-1px'}}>Deliver to</p>
-            <h1 style={{ fontSize: '15px',  }}>Nigeria</h1>
+            <p>Deliver to</p>
+            <h1>Nigeria</h1>
          </div>
     </div>
 

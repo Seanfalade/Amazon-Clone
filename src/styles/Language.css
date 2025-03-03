@@ -1,0 +1,13 @@
+.country-language{
+    display: flex;
+    align-items: center;
+    padding:10px;
+    gap: 5px;
+    margin-left: 15px;
+}
+
+.border-white:hover{
+    cursor: pointer;
+    border: 1.5px solid white;
+    padding: 5px;
+}

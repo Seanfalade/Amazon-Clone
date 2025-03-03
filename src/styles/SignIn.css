@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.signin-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    height: 100vh;
+}
+
+
+.signin-info-box{
+    border: 1px solid;
+    height: 385px;
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px 10px;
+    border-color: lightslategray;
+    align-items: center;
+}
+.signin-info-box .p1{
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 2px;
+}
+.signin-info-box p{
+    font-size: 12.2px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.signin-info-box a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+.signin-info-box a{
+    color: lightseagreen;
+}
+
+.signin-info-box input{
+    border: 1px solid gray;
+    width: 90%;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 2px lightgrey;
+}
+
+.signin-info-box button{
+    width: 90%;
+    background-color: gold;
+    border-radius: 14px;
+    padding: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.a2 a{
+    text-decoration: none;
+}
+
+.signin-info-box .p2{
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.span2{
+    margin-top: 10px;
+}
+.signin-info-box .span2 a{
+    text-decoration: none;
+}
+
+.create-account{
+    margin-top: 18px;
+    width: 350px;
+    border: none;
+    justify-content: center;
+}
+
+.lined-text{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: grey;
+    font-size: 12px;
+}
+
+.lined-text::before,
+.lined-text::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: black;
+    margin: 0px 10px;
+}
+
+.create-account button{
+    width: 100%;
+    border-radius: 18px;
+    padding: 5px;
+    border: 1px solid grey;
+    background-color: white;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.create-account button:hover{
+    background-color: rgb(245, 249, 250);
+}
+
+.footer{
+    border: none;
+    width: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.terms-conditions a{ 
+    display: flex;
+    gap: 50px;
+}

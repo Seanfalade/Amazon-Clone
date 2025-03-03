@@ -1,5 +1,5 @@
 import React from 'react'
-import './ReturnOrders.css'
+import '../styles/ReturnOrders.css'
 
 const ReturnOrders = () => {
   return (
@@ -9,7 +9,7 @@ const ReturnOrders = () => {
             <p  style={{
                 fontSize: '13px',
                 marginBottom: '-1px',
-                fontWeight: 'lighter'}}
+                }}
                 >Returns</p>
             <h1 style={{
                 fontSize: '14px',

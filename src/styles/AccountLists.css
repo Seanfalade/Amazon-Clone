@@ -1,0 +1,20 @@
+.sign-in{
+    margin-left: 15px;
+}
+
+.sign-in p{
+    font-size: 13px;
+    margin-bottom: -1px; 
+    font-weight:;
+}
+
+.sign-in h1{
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+.border-white:hover{
+    cursor: pointer;
+    border: 1.5px solid white;
+    padding: 5px;
+}

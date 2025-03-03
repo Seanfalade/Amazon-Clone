@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
-
+import '../styles/AccountLists.css'
 const AccountLists = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdown = (e) =>{
+    e.stopPropagation();
+    setIsOpen((prev)=>!prev);
+  };
+
+  const closeDropdown=()=>{
+    setIsOpen(false);
+  }
 
   return (
     <>
-      <div className="sign-in dropdown" style={{ marginLeft: '15px' }} onClick={toggleDropdown}>
-        <p style={{ fontSize: '13px', marginBottom: '-1px', fontWeight: 'lighter' }}>Hello, Sign in</p>
-        <h1 style={{ fontSize: '14px', fontWeight: 'bold' }}>Accounts & Lists</h1>
+    <div style={{position: 'relative'}} onClick={closeDropdown}>
+      <div className="sign-in dropdown border-white" onClick={toggleDropdown}>
+        <p>Hello, Sign in</p>
+        <h1>Accounts & Lists</h1>
         
         {isOpen && (
         <div>
-            <div className="signin-button">
                 <button >Sign in</button>
-            </div>
           <ul className="dropdown-menu show">
             <li><a className="dropdown-item" href="#">Action</a></li>
             <li><a className="dropdown-item" href="#">Action two</a></li>
@@ -24,6 +30,7 @@ const AccountLists = () => {
         </div>
         )}
       </div>
+     </div>
     </>
   );
 };

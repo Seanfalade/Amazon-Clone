@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../styles/Carosel.css'
 const Carosel = () => {
   return (
     <>
@@ -8,20 +8,20 @@ const Carosel = () => {
     <div className="carousel-item active">
       <img src='/public/Images/71VcGrxQRBL._SX3000_.jpg' className="d-block w-100" alt="..."/>
     </div>
-    <div className="carousel-item">
-      <img src='public/Images/61lwJy4B8PL._SX3000_.jpg' className="d-block w-100" alt="..."/>
-    </div>
-    <div className="carousel-item">
-      <img src='public/Images/61zAjw4bqPL._SX3000_.jpg' className="d-block w-100" alt="..."/>
+    <div className="carousel-item active">
+      <img src='/public/Images/61lwJy4B8PL._SX3000_.jpg' className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item active">
-      <img src='public/Images/71Ie3JXGfVL._SX3000_.jpg' className="d-block w-100" alt="..."/>
+      <img src='/public/Images/61zAjw4bqPL._SX3000_.jpg' className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item active">
-      <img src='public/Images/81KkrQWEHIL._SX3000_.jpg' className="d-block w-100" alt="..."/>
+      <img src='/public/Images/71Ie3JXGfVL._SX3000_.jpg' className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item active">
-      <img src='public/Images/7130x7c9NmL._SX3000_.jpg' className="d-block w-100" alt="..."/>
+      <img src='/public/Images/81KkrQWEHIL._SX3000_.jpg' className="d-block w-100" alt="..."/>
+    </div>
+    <div className="carousel-item active">
+      <img src='/public/Images/7130x7c9NmL._SX3000_.jpg' className="d-block w-100" alt="..."/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

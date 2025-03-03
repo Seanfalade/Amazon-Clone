@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './informationBox.css'
+import '../styles/informationBox.css'
 const InformationBar = () => {
   return (
     <>

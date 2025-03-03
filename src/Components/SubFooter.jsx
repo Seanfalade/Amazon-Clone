@@ -1,6 +1,6 @@
 import React from 'react'
 import { } from 'react-router-dom'
-import './SubFooter.css'
+import '../styles/SubFooter.css'
 
 const SubFooter = () => {
   return (

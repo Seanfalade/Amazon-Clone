@@ -1,0 +1,86 @@
+.signup-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+
+}
+
+.amazon-logo{
+    height: 40px;
+    max-width: 100%;
+    
+    margin-bottom: 20px;
+}
+
+.signup-box{
+    border: 1px solid;
+    width: 370px;
+    height: 680px;
+    padding: 20px;
+    border-radius: 10px;
+    border-color: lightgray;
+    box-shadow: 1px 1px lightgrey;
+    
+}
+
+.signup-box input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+    border: 1.5px solid;
+    border-color: lightgray;
+    box-shadow: inset 1px 1px 2px lightgrey;
+}
+
+.signup-box label{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.signup-box button{
+    width: 100%;
+    padding: 5px;
+    border-radius: 14px;
+    background-color: gold;
+    border: none;
+    cursor: pointer;
+}
+
+.p1{
+    font-size: 12.5px;
+}
+
+.p2{
+    font-size: 13px;
+    margin-top: 30px;
+}
+
+.p2 a{
+    color: teal;
+}
+
+.business-acc p{
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: -3px;
+}
+
+.business-acc a{
+    font-size: 15px;
+    color: teal;
+    text-decoration: none;
+}
+
+.already-have p{
+    font-size: 15px;
+}
+
+.already-have a{
+    font-size: 15px;
+    color: teal;
+    text-decoration: none;
+}
