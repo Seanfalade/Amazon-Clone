@@ -4,11 +4,12 @@ import NavBar2 from "./NavBar2";
 import "../styles/DisplayHeadsets.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import { Link } from "react-router-dom";
 
 const DisplayHeadsets = () => {
   const [quantity, setQuantity] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
-  const cartItems = useSelector((state) => state.cart.cartItems);
+  // const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
   const productDetails = {
     id: 1,

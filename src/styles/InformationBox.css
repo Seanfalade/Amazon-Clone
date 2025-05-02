@@ -1,20 +1,18 @@
 .information-bar{
-    border: 1px solid ;
     height: 220px;
     margin-top: 70px;
+    background-color: white;
 }
 
 
 .info-bar-content{
     border: 1px solid gainsboro;
     display: flex;
-    height: 150px;
     margin: 50px 0px 30px 0px;
     justify-content: space-around;
     align-items: center;
     padding: 5px 0px 20px 8px;
-
-
+    background-color: white;
 }
     
     

@@ -1,0 +1,39 @@
+.slider-container {
+  border: 1px solid lightgray;
+  width: 1200px;
+  margin-left: 30px;
+  /* margin-top: -280px; */
+  padding-bottom: 20px;
+  background-color: white;
+  /* overflow: hidden; */
+  /* Prevent images from overflowing */
+}
+
+.slider-container h2 {
+  font-size: 22px;
+  font-weight: 680;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.slider-img {
+  padding: 10px;
+}
+
+.slide img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  /* Ensures image scales properly */
+  height: auto;
+  /* Adjust height dynamically */
+  max-height: 250px;
+  /* Prevents images from being too large */
+  object-fit: contain;
+  /* Maintain aspect ratio */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  /* Optional: Smooth corners */
+}

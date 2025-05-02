@@ -25,6 +25,7 @@ const NavBar1 = () => {
           backgroundColor: "#131921",
         }}
       >
+        <Link to={"/"}>
         <img
           src="/public/Images/gratis-png-amazonas.png"
           width={100}
@@ -32,6 +33,7 @@ const NavBar1 = () => {
           style={{ backgroundColor: "#131921" }}
           alt=""
         />
+        </Link>
 
         <NavbarLocation />
         <NavbarInput />

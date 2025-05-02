@@ -21,7 +21,7 @@ const cartSlice = createSlice({
       } else {
         state.cartItems.push({ id, name, image, price, quantity: 1 });
       }
-      state.totalQuantity += quantity;
+      state.totalQuantity += 1;
       state.totalAmount = state.cartItems.reduce(
         (acc, item) => acc + item.price * item.quantity,
         0
@@ -36,7 +36,7 @@ const cartSlice = createSlice({
       if (itemToRemove) {
         state.totalQuantity -= itemToRemove.quantity;
         state.cartItems = state.cartItems.filter(
-          (item) => item.id !== action.payload.id
+          (item) => item.id !== action.payload
         );
       }
       state.totalAmount = state.cartItems.reduce(

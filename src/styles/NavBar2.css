@@ -2,6 +2,15 @@
     background-color: #232f3e;
     color: white;
 }
+.navbar-nav .nav-link,
+.navbar-brand {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: lightgray !important; /* Optional: Slightly lighter color on hover */
+}
+
 
 .container-fluid{
     height: 30px;

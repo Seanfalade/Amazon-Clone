@@ -64,34 +64,43 @@ const SubFooter = () => {
             <div>
                 <button style={{
                      border: 'thin solid lightgrey',
-                     padiing: '10px 20px 10px 8px',
+                     padding: '8px',
                      backgroundColor: '#232f3e',
                      color: 'lightgrey',
-                     fontWeight: '380',
-                     fontSize: '12px',
-                     marginRight: '10px'
+                     fontWeight: '500',
+                     fontSize: '13px',
+                     marginRight: '10px',
+                     borderRadius: '5px'
+
                      }}>
                     <img src="" alt="" />
                     <span>English</span>
                 </button>
                 <button style={{
                      border: 'thin solid lightgrey',
-                     padiing: '15px',
+                     padding: '8px',
                      backgroundColor: '#232f3e',
                      color: 'lightgrey',
-                     fontWeight: '380',
-                     fontSize: '12px',
-                     marginRight: '10px'
+                     fontWeight: '500',
+                     fontSize: '13px',
+                     marginRight: '10px',
+                     width: '150px',
+                     borderRadius: '5px',
+                     textAlign: 'left'
+
                       }}>
                     <span>$ USD - U.S Dollar</span>
                 </button>
                 <button style={{
                      border: 'thin solid lightgrey',
-                     padiing: '15px 20px 10px 8px',
+                     padding: '8px',
                      backgroundColor: '#232f3e',
                      color: 'lightgrey', 
-                     fontWeight: '380',
-                     fontSize: '12px',
+                     fontWeight: '500',
+                     fontSize: '13px',
+                     width: '150px',
+                     borderRadius: '5px',
+                     textAlign: 'left'
                      }}>
                     <img src="" alt="" />
                     <span>United States</span>

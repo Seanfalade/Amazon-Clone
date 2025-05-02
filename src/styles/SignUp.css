@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 15px;
-
+    background-color: white;
 }
 
 .amazon-logo{
@@ -50,6 +50,9 @@
     cursor: pointer;
 }
 
+.signup-box button:hover {
+    background-color: rgb(243, 208, 11);
+}
 .p1{
     font-size: 12.5px;
 }

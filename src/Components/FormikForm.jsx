@@ -1,9 +1,13 @@
 import React from "react";
-import { useFormik } from "formik";
+import { Formik, useFormik } from "formik";
 import * as yup from "yup";
 import "../styles/SignUp.css";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const FormikForm = () => {
+  const navigate = useNavigate()
+  let url = "http://localhost:5005/user/sign-up";
   let formik = useFormik({
     initialValues: {
       firstname: "",
@@ -11,30 +15,58 @@ const FormikForm = () => {
       email: "",
       number: "",
       password: "",
+      confirmpassword: "",
     },
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: (values, { resetForm, setErrors }) => {
+      console.log("Submitting Form Data:", values);
+    
+      axios
+        .post(url, values)
+        .then((response) => {
+          console.log("Submission successful:", response.data);
+          alert("Account created successfully!");
+          resetForm();
+          navigate("/sign-in"); // Redirect to sign-in page
+        })
+        .catch((err) => {
+          console.log("Submission error:", err.response);
+    
+          if (err.response && err.response.status === 400) {
+            setErrors({ email: "Email already registered" });
+          } else {
+            alert("Error signing up. Please try again.");
+          }
+        });
     },
     validationSchema: yup.object({
       firstname: yup.string().required("This field is required"),
-      lastname: yup.string().required("This field is required"),
       email: yup
         .string()
         .required("This field is required")
         .email("This must be an email"),
       number: yup.number(),
-      password: yup.string().required("This field is required"),
+      password: yup
+        .string()
+        .required("This field is required")
+        .min(6, "Password must be at least 6 characters"),
+        confirmpassword: yup
+        .string()
+        .oneOf([yup.ref("password"), null], "Passwords must match")
+        .required("Please confirm your password"),
     }),
   });
+
   return (
     <>
       <div className="signup-page">
         <div>
-          <img
-            className="amazon-logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
-            alt=""
-          />
+          <Link to={"/"}>
+            <img
+              className="amazon-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+              alt=""
+            />
+          </Link>
         </div>
 
         <div className="signup-box">
@@ -51,6 +83,7 @@ const FormikForm = () => {
                     ? "form-control my-2 is-invalid"
                     : "form-control my-2"
                 }
+                value={formik.values.firstname}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
@@ -70,6 +103,7 @@ const FormikForm = () => {
                     ? "form-control my-2 is-invalid"
                     : "form-control my-2"
                 }
+                value={formik.values.email}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
@@ -82,12 +116,14 @@ const FormikForm = () => {
             <div>
               <input
                 type="text"
+                name="password"
                 placeholder="At least 6 characters"
                 className={
                   formik.touched.password && formik.errors.password
                     ? "form-control my-2 is-invalid"
                     : "form-control my-2"
                 }
+                value={formik.values.password}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
@@ -97,15 +133,17 @@ const FormikForm = () => {
             </small>
             <p className="p1">Passwords must be at least 6 characters.</p>
 
-            <label htmlFor="Re-enter password">Re-enter password</label>
+            <label htmlFor="confirmPassword">Re-enter password</label>
             <div>
               <input
                 type="text"
+                name="confirmpassword"
                 className={
-                  formik.touched.password && formik.errors.password
+                  formik.touched.confirmpassword && formik.errors.confirmpassword
                     ? "form-control my-2 is-invalid"
                     : "form-control my-2"
                 }
+                value={formik.values.confirmpassword}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
@@ -113,7 +151,10 @@ const FormikForm = () => {
             <small className="text-danger">
               {formik.touched.password && formik.errors.password}
             </small>
-            <button>Continue</button>
+            
+            <button type="submit">
+              Continue
+            </button>
 
             <div className="p2">
               <p>
@@ -134,9 +175,9 @@ const FormikForm = () => {
             <hr />
             <div className="already-have">
               <p>
-                Already have an account?{" "}
+                Already have an account?
                 <span>
-                  <a href="">Sign in</a>
+                  <a href="/sign-in">Sign in</a>
                 </span>
               </p>
             </div>

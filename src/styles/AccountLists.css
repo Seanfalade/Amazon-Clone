@@ -1,20 +1,103 @@
-.sign-in{
+.account-container {
+    position: relative;
+    display: inline-block;
+}
+
+.sign-in {
     margin-left: 15px;
+    padding: 5px;
+    cursor: pointer;
 }
 
-.sign-in p{
+.sign-in p {
     font-size: 13px;
-    margin-bottom: -1px; 
-    font-weight:;
+    margin-bottom: -1px;
 }
 
-.sign-in h1{
-    font-size: 14px; 
+.sign-in h1 {
+    font-size: 14px;
     font-weight: bold;
 }
 
-.border-white:hover{
+/* Dropdown Modal Styling */
+.dropdown-modal {
+    position: absolute;
+    top: 100%;
+    left: -250px;
+    width: 500px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 15px;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sign-in-btn {
+    width: 50%;
+    display: block; /* Ensures it takes full width and centers with auto margin */
+    margin: 10px auto; /* Centers horizontally */
+    margin-top: -5px;
+    background-color: gold;
+    border: none; /* Remove extra border */
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 10px;
     cursor: pointer;
-    border: 1.5px solid white;
-    padding: 5px;
+}
+
+.sign-in-btn:hover {
+    background-color: #d39e00; /* Changes color on hover */
+}
+
+.dropdown-modal p {
+    font-size: 14px;
+    color: black;
+    margin-top: 10px;
+    margin-left: 150px;
+}
+
+.dropdown-modal p span {
+    font-weight: bold;
+    color: #111;
+}
+
+.dropdown-modal p a {
+    color: #007185;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown-modal p a:hover {
+    text-decoration: underline;
+}
+
+.dropdown-modal hr {
+    border: none; /* Remove default styling */
+    border-top: 1px solid #ddd; /* Light gray separator line */
+    margin
+}
+
+.dropdown-menu {
+    list-style: none;
+    padding: 10px 0;
+    margin: 10px 0 0;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.dropdown-item:hover {
+    background-color: #f3f3f3;
 }

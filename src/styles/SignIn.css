@@ -12,12 +12,13 @@
     align-items: center;
     margin-top: 100px;
     height: 100vh;
+    background-color: white;
 }
 
 
 .signin-info-box{
     border: 1px solid;
-    height: 385px;
+    height: 438px;
     width: 350px;
     padding: 20px;
     border-radius: 10px 10px;
@@ -61,6 +62,10 @@
     margin-top: 10px;
     cursor: pointer;
     border: none;
+}
+
+.signin-info-box button:hover {
+    background-color: rgb(235, 200, 4);
 }
 
 .a2 a{

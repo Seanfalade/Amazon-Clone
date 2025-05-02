@@ -2,15 +2,14 @@ import { Link } from "react-router-dom";
 import "../styles/imageBoxes.css";
 import DisplayHeadsets from "./DisplayHeadsets";
 
-const ImageBoxes = ({ product = [], productTwo = [] }) => {
-  const productDetails = {
-    name: "Razer BlackShark V2 X Gaming Headset",
-    image: "/public/images/71MGiPTwXAL._AC_SX679_.jpg",
-    color: "White",
-    price: "$34.99",
-    size: "3.5mm",
-    style: "PC",
-  };
+const ImageBoxes = ({
+  product = [],
+  productTwo = [],
+  productThree = [],
+  productFour = [],
+  productFive = [],
+  productSix = [],
+}) => {
 
   return (
     <>
@@ -80,8 +79,69 @@ const ImageBoxes = ({ product = [], productTwo = [] }) => {
             </span>
           </div>
 
-          {/* Headset Details */}
-          {/* <DisplayHeadsets productDetails={productDetails} /> */}
+          {/* Make up */}
+          <div className="image-box">
+            <h2>Level up your beauty routine</h2>
+            <div className="image2">
+              {productThree.map((item, index) => (
+                <Link to={item.link} key={index} className="product-img2">
+                  <img src={`/public/images/${item.image}`} alt={item.label} />
+                  <p>{item.label}</p>
+                </Link>
+              ))}
+            </div>
+            <span>
+              <a href="#">See more</a>
+            </span>
+          </div>
+
+          {/* Wireless Tech */}
+          <div className="image-box">
+            <h2>Wireless Tech</h2>
+            <div className="image4">
+              {productFour.map((item, index) => (
+                <Link to={item.link} key={index} className="product-img2">
+                  <img src={`/public/images/${item.image}`} alt={item.label} />
+                  <p>{item.label}</p>
+                </Link>
+              ))}
+            </div>
+            <span>
+              <a href="#">Discover more</a>
+            </span>
+          </div>
+
+          {/* Travel Essentials */}
+          <div className="image-box">
+            <h2>Most-loved travel essentials</h2>
+            <div className="image2">
+              {productFive.map((item, index) => (
+                <Link to={item.link} key={index} className="product-img2">
+                  <img src={`/public/images/${item.image}`} alt={item.label} />
+                  <p>{item.label}</p>
+                </Link>
+              ))}
+            </div>
+            <span>
+              <a href="#">Discover more</a>
+            </span>
+          </div>
+
+          {/* Home Finds */}
+          <div className="image-box">
+            <h2>Fantastic Finds for Home</h2>
+            <div className="image4">
+              {productSix.map((item, index) => (
+                <Link to={item.link} key={index} className="product-img2">
+                  <img src={`/public/images/${item.image}`} alt={item.label} />
+                  <p>{item.label}</p>
+                </Link>
+              ))}
+            </div>
+            <span>
+              <a href="#">See more</a>
+            </span>
+          </div>
         </div>
       </main>
     </>

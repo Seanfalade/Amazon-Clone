@@ -1,38 +1,81 @@
-import React, { useState } from 'react';
-import '../styles/AccountLists.css'
+import React, { useState, useEffect } from "react";
+import "../styles/AccountLists.css";
+import { useNavigate } from "react-router-dom";
+
 const AccountLists = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [firstname, setFirstname] = useState(null);
+  const navigate = useNavigate();
 
-  const toggleDropdown = (e) =>{
-    e.stopPropagation();
-    setIsOpen((prev)=>!prev);
+  useEffect(() => {
+    const storedFirstname = localStorage.getItem("firstname");
+    if (storedFirstname) {
+      setFirstname(storedFirstname);
+    }
+  }, []);
+
+  const handleSignOut = () => {
+    localStorage.removeItem("firstname");
+    localStorage.removeItem("token"); // Also remove token if needed
+    setFirstname(null);
+    navigate("/"); // Go back to home page
   };
 
-  const closeDropdown=()=>{
-    setIsOpen(false);
-  }
-
   return (
-    <>
-    <div style={{position: 'relative'}} onClick={closeDropdown}>
-      <div className="sign-in dropdown border-white" onClick={toggleDropdown}>
-        <p>Hello, Sign in</p>
+    <div
+      className="account-container"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      {/* Button to open modal */}
+      <div className="sign-in border-white">
+        <p>Hello, {firstname ? firstname : "Sign in"}</p>
         <h1>Accounts & Lists</h1>
-        
-        {isOpen && (
-        <div>
-                <button >Sign in</button>
-          <ul className="dropdown-menu show">
-            <li><a className="dropdown-item" href="#">Action</a></li>
-            <li><a className="dropdown-item" href="#">Action two</a></li>
-            <li><a className="dropdown-item" href="#">Action three</a></li>
+      </div>
+
+      {/* Dropdown Modal */}
+      {isOpen && (
+        <div className="dropdown-modal">
+          {!firstname ? (
+            <>
+              <button
+                className="sign-in-btn"
+                onClick={() => navigate("/sign-in")}
+              >
+                Sign in
+              </button>
+              <p>
+                <span>New customer?</span> <a href="/sign-up">Start here</a>
+              </p>
+              <hr />
+            </>
+          ) : (
+            <button className="sign-in-btn" onClick={handleSignOut}>
+              Sign out
+            </button>
+          )}
+
+          <ul className="dropdown-menu">
+            <li>
+              <a className="dropdown-item" href="#">
+                Your Orders
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Your Wish List
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Your Recommendations
+              </a>
+            </li>
           </ul>
         </div>
-        )}
-      </div>
-     </div>
-    </>
+      )}
+    </div>
   );
 };
 
-export default AccountLists
+export default AccountLists;
